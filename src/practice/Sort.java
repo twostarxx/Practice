@@ -2,14 +2,15 @@ package practice;
 
 public class Sort {
 	
-	/**快速排序
+	/*======================快速排序=============================*/
+	/*--------递归-------*/
+	/**
 	 * @nums[]: 数组
 	 * @start: 0
 	 * @end: nums.length - 1
 	 * 
 	 * System.out.println(Arrays.toString(nums));
 	 * */
-	
 	public int[] quickSort(int[] nums, int start, int end) {
 		int key = nums[start];	//第一个作为key
 		int i=start, j=end;
