@@ -1,5 +1,7 @@
 package practice;
 
+import java.util.Arrays;
+
 /**
  * @version 2017.10.1
  * @author XINGXIN
@@ -83,7 +85,6 @@ public class Sort {
 			nums[j] = nums[i];
 		}
 		nums[i] = key;	//i==j，需要将key替换到i或j的位置
-		
 		/*排左边*/
 		if (i-1 > start)
 			quickSort(nums, start, i-1);
@@ -94,10 +95,11 @@ public class Sort {
 	}
 	
 	/**
-	 * <p>归并排序.<br>
+	 * <p>归并排序O(nlogn).<br>
 	 * @param nums: int[]
 	 * @param low: 0.
 	 * @param high: nums.length-1.
+	 * @return nums.
 	 */
 	public int[] mergeSort(int[] nums, int low, int high) {
 		int mid = (low + high) / 2;
@@ -131,6 +133,30 @@ public class Sort {
 			ns[k2+low] = temp[k2];
 		}
 		return ns;
+	}
+	
+	/**
+	 * <p>桶排序.<br>
+	 * 无序数组有个要求,就是成员隶属于固定(有限的)的区间.
+	 * 如范围为[0-9](考试分数为1-100等)
+	 * @param nums: int[].
+	 * @param maxN: max space shall be used.
+	 * @return nums.
+	 */
+	public int[] bucketSort(int[] nums, int maxN) {
+		int[] temp = new int[maxN];
+		for (int i : nums) {
+			temp[i] ++;
+		}
+		System.out.println(Arrays.toString(temp));
+		int k = 0;
+		for (int j=0; j<temp.length; j++) {
+			while (temp[j] > 0) {
+				nums[k++] = j;
+				temp[j]--;
+			}
+		}
+		return nums;
 	}
 
 }
