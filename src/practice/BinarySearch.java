@@ -1,16 +1,19 @@
 package practice;
 
-import java.util.Arrays;
-
+/**
+ * @version 2017.10.01
+ * @author XINGXIN
+ * */
 public class BinarySearch {
 	
 	/*=====================二分查找===========================================*/
-    /*-------递归---------*/
+    /**/
 	/**
      * @param nums: The integer array.
      * @param target: Target to find.
-     * @start: 0.
-     * @end: nums.length - 1.
+     * @param start: 0.
+     * @param end: nums.length - 1.
+     * @return location.
      */
     public int binarySearchCur(int[] nums, int target, int start, int end) {
     	if (start <= end) {
@@ -30,6 +33,7 @@ public class BinarySearch {
 	/**
      * @param nums: The integer array.
      * @param target: Target to find.
+     * @return location.
      */
 	 /*使用三个指针，分别指向头、尾、待比较的中间位置。*/
     public int binarySearch(int[] nums, int target) {
@@ -61,7 +65,7 @@ public class BinarySearch {
 	/**
      * @param nums: The integer array.
      * @param target: Target to find.
-     * @return: The first position of target. Position starts from 0.
+     * @return The first position of target. Position starts from 0.
      */
     public int binarySearchFirstLoc(int[] nums, int target) {
         if (nums == null || nums.length == 0) {  
@@ -89,7 +93,7 @@ public class BinarySearch {
 	/**
      * @param nums: The integer array.
      * @param target: Target to find.
-     * @return: The last position of target. Position starts from 0.
+     * @return The last position of target. Position starts from 0.
      */
     public int binarySearchLastLoc(int[] nums, int target) {
     	if (nums == null || nums.length == 0)

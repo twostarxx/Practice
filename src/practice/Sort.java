@@ -1,15 +1,18 @@
 package practice;
 
+/**
+ * @version 2017.10.1
+ * @author XINGXIN
+ * */
 public class Sort {
 	
-	/*======================快速排序=============================*/
-	/*--------递归-------*/
 	/**
-	 * @nums[]: 数组
-	 * @start: 0
-	 * @end: nums.length - 1
-	 * 
-	 * System.out.println(Arrays.toString(nums));
+	 * <p>快速排序</br>
+	 * 递归.
+	 * @param nums[]: 数组
+	 * @param start: 0
+	 * @param end: nums.length - 1
+	 * @return int[] nums.
 	 * */
 	public int[] quickSort(int[] nums, int start, int end) {
 		int key = nums[start];	//第一个作为key
