@@ -7,13 +7,69 @@ package practice;
 public class Sort {
 	
 	/**
-	 * <p>快速排序</br>
+	 * <p>选择排序O(n^2).<br>
+	 * @param nums: int[].
+	 * @return nums. 
+	 */
+	public int[] selectSort(int[] nums) {
+		for (int i=0; i<nums.length; i++) {
+			int minindex = i;
+			for (int j=i; j<nums.length; j++) {
+				if (nums[j] < nums[minindex]) {
+					minindex = j;
+				}
+			}
+			int temp = nums[i];
+			nums[i] = nums[minindex];
+			nums[minindex] = temp;
+		}
+		return nums;
+	}
+	
+	/**
+	 * <p>冒泡排序O(n^2).<br>
+	 * @param nums: int[].
+	 * @return nums. 
+	 */
+	public int[] bubbleSort(int[] nums) {
+		for (int i=0; i<nums.length-1; i++) {
+			for (int j=0; j<nums.length-1-i; j++) {
+				if (nums[j] > nums[j+1]) {
+					int temp = nums[j];
+					nums[j] = nums[j+1];
+					nums[j+1] = temp;
+				}
+			}
+		}
+		return nums;
+	}
+	
+	/**
+	 * <p>插入排序O(n^2).<br>
+	 * @param nums: int[].
+	 * @return nums. 
+	 */
+	public int[] insertionSort(int[] nums) {
+		for (int i=1; i<nums.length; i++) {
+			for (int j=i; j>0; j--) {
+				if (nums[j] < nums[j-1]) {
+					int temp = nums[j];
+					nums[j] = nums[j-1];
+					nums[j-1] = temp;
+				}
+			}
+		}
+		return nums;
+	}
+	
+	/**
+	 * <p>快速排序O(nlogn).</br>
 	 * 递归.
 	 * @param nums[]: 数组
 	 * @param start: 0
 	 * @param end: nums.length - 1
 	 * @return int[] nums.
-	 * */
+	 */
 	public int[] quickSort(int[] nums, int start, int end) {
 		int key = nums[start];	//第一个作为key
 		int i=start, j=end;

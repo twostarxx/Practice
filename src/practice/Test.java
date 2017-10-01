@@ -8,7 +8,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		int[] A = {3, 5, 2, 7, 3, 1};
 		Sort sort = new Sort();
-		int[] sortA = sort.bubbleSort(A);
+		int[] sortA = sort.selectSort(A);
 		System.out.println(Arrays.toString(sortA));
 
 	}
