@@ -90,8 +90,47 @@ public class Sort {
 		/*排右边*/
 		if (j+1 < end)
 			quickSort(nums, j+1, end);
-		
 		return nums;
+	}
+	
+	/**
+	 * <p>归并排序.<br>
+	 * @param nums: int[]
+	 * @param low: 0.
+	 * @param high: nums.length-1.
+	 */
+	public int[] mergeSort(int[] nums, int low, int high) {
+		int mid = (low + high) / 2;
+		if (low < high) {
+			mergeSort(nums, low, mid);	//左边排序
+			mergeSort(nums, mid+1, high);	//右边排序
+			merge(nums, low, mid, high);	//两边连接
+		}
+		return nums;
+	}
+	/*重点：两个数组如何合并？详细见思想*/
+	public int[] merge(int[] ns, int low, int mid, int high) {
+		int[] temp = new int[high-low+1];	
+		int i=low, j=mid+1, k=0;
+		while (i<=mid && j<=high) {	
+			if (ns[i] <= ns[j]) {	//比较剩下的两个数组的第一个，小的放入temp
+				temp[k++] = ns[i++];
+			} else {
+				temp[k++] = ns[j++];
+			}
+		}
+		//ns前半段还有剩余
+		while (i <= mid) {
+			temp[k++] = ns[i++];
+		}
+		//ns后半段还有剩余
+		while (j <= high) {
+			temp[k++] = ns[j++];
+		}
+		for (int k2=0; k2<temp.length; k2++) {
+			ns[k2+low] = temp[k2];
+		}
+		return ns;
 	}
 
 }
