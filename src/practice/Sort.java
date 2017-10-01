@@ -148,7 +148,6 @@ public class Sort {
 		for (int i : nums) {
 			temp[i] ++;
 		}
-		System.out.println(Arrays.toString(temp));
 		int k = 0;
 		for (int j=0; j<temp.length; j++) {
 			while (temp[j] > 0) {
