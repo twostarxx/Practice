@@ -15,6 +15,9 @@ public class BinarySearch {
      * @param end: nums.length - 1.
      * @return location.
      */
+	/**
+	 * !!!!!!!!这个方法有错！！！！！！！！！
+	 * */
     public int binarySearchCur(int[] nums, int target, int start, int end) {
     	if (start <= end) {
     		int mid = start + (end-start) / 2;

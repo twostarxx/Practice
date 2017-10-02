@@ -10,6 +10,10 @@ public class Test {
 		Sort sort = new Sort();
 		int[] sortA = sort.bucketSort(A, 10);
 		System.out.println(Arrays.toString(sortA));
+		
+		int[] B = {0, 0, 1, 2, 3, 5, 7, 12};
+		BinarySearch binSea = new BinarySearch();
+		binSea.binarySearch(B, 6);
 
 	}
 
